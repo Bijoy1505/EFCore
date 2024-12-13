@@ -1,0 +1,15 @@
+D:\EFCore\PublisherData\bin\Debug\net8.0\PublisherData.deps.json
+D:\EFCore\PublisherData\bin\Debug\net8.0\PublisherData.dll
+D:\EFCore\PublisherData\bin\Debug\net8.0\PublisherData.pdb
+D:\EFCore\PublisherData\bin\Debug\net8.0\PublisherDomain.dll
+D:\EFCore\PublisherData\bin\Debug\net8.0\PublisherDomain.pdb
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.csproj.AssemblyReference.cache
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.GeneratedMSBuildEditorConfig.editorconfig
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.AssemblyInfoInputs.cache
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.AssemblyInfo.cs
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.csproj.CoreCompileInputs.cache
+D:\EFCore\PublisherData\obj\Debug\net8.0\Publishe.C9B3FD54.Up2Date
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.dll
+D:\EFCore\PublisherData\obj\Debug\net8.0\refint\PublisherData.dll
+D:\EFCore\PublisherData\obj\Debug\net8.0\PublisherData.pdb
+D:\EFCore\PublisherData\obj\Debug\net8.0\ref\PublisherData.dll

@@ -1,3 +1,6 @@
 Hello World!!
 Hi I am Tom.
 Hi.
+
+Git reset
+git revert
