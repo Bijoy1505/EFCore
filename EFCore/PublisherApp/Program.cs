@@ -14,7 +14,95 @@ using PublisherDomain;
 //GetAuthorsWithBooks();
 using PubContext _context = new();
 
-QueryAggregate();
+//ExecuteDelete();
+
+void ExecuteDelete()
+{
+    var deletedId = 18;
+    _context.Authors.Where(a => a.Id == deletedId).ExecuteDelete();
+}
+
+//CoordinateRetrieveAndUpdateAuthor();
+
+void CoordinateRetrieveAndUpdateAuthor()
+{
+    var author = FindThatAutor(18);
+    if (author.FirstName == "Pooja")
+    {
+        author.FirstName = "Priyanka";
+        SaveThatAuthor(author);
+    }
+}
+
+Author FindThatAutor(int authorId)
+{
+    using var shortLivedContext = new PubContext();
+    return shortLivedContext.Authors.Find(authorId);
+}
+void SaveThatAuthor(Author author)
+{
+    using var anotherShortLivedContext = new PubContext();
+    anotherShortLivedContext.Authors.Update(author);
+    anotherShortLivedContext.SaveChanges();
+}
+
+//DeleteAnAuthor();
+
+void DeleteAnAuthor()
+{
+    var extraJL = _context.Authors.Find(19);
+    if (extraJL != null)
+    {
+        _context.Authors.Remove(extraJL);
+        _context.SaveChanges();
+    }
+}
+
+//VariousOperations();
+
+void VariousOperations()
+{
+    var author = _context.Authors.Find(18);
+    author.LastName = "Kandarkar";
+    var newauthor = new Author { FirstName = "Priyanka", LastName = "Kapoor" };
+    _context.Authors.Add(newauthor);
+    _context.SaveChanges();
+}
+
+RetrieveAndUpdateMultipleAuthor();
+void RetrieveAndUpdateMultipleAuthor()
+{
+    var PatwalAuthors = _context.Authors.Where(a => a.LastName == "Patwaal").ToList();
+    foreach (var pa in PatwalAuthors)
+    {
+        pa.LastName = "Patwal";
+    }
+    Console.WriteLine($"Before:\r\n {_context.ChangeTracker.DebugView.ShortView} ");
+    _context.ChangeTracker.DetectChanges();
+    Console.WriteLine($"After:\r\n {_context.ChangeTracker.DebugView.ShortView} ");
+    _context.SaveChanges();
+}
+
+//RetrieveAndUpdateAuthor();
+
+void RetrieveAndUpdateAuthor()
+{
+    var author = _context.Authors.FirstOrDefault(a => a.FirstName == "Priyanka" && a.LastName == "Kapr");
+    if (author != null)
+    {
+        author.LastName = "Kapoor";
+        _context.SaveChanges();
+    }
+}
+
+//AddAuthor();
+void AddAuthor()
+{
+    var author = new Author { FirstName = "Priyanka", LastName = "Kapr" };
+    _context.Authors.Add(author);
+    _context.SaveChanges();
+}
+//QueryAggregate();
 
 void QueryAggregate()
 {
@@ -36,7 +124,7 @@ void SortAuthors()
     //LINQ will pick only last order by command //We can Use OrderBy then ThenBy Command
     var authorsByLastName = _context.Authors
                             .OrderBy(a => a.LastName)
-                             //.OrderBy(a => a.FirstName).ToList();
+                            //.OrderBy(a => a.FirstName).ToList();
                             .ThenBy(a => a.FirstName).ToList();
     authorsByLastName.ForEach(a => Console.WriteLine(a.LastName + "," + a.FirstName));
 
@@ -133,13 +221,13 @@ void GetAuthorsWithBooks()
         }
     }
 }
-void AddAuthor()
-{
-    var author = new Author { FirstName = "Jatin", LastName = "Kumar" };
-    using var context = new PubContext();
-    context.Authors.Add(author);
-    context.SaveChanges();
-}
+//void AddAuthor()
+//{
+//    var author = new Author { FirstName = "Jatin", LastName = "Kumar" };
+//    using var context = new PubContext();
+//    context.Authors.Add(author);
+//    context.SaveChanges();
+//}
 void GetAuthors()
 {
     using var context = new PubContext();
