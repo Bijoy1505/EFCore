@@ -24,6 +24,11 @@ void ExecuteDelete()
 
 //CoordinateRetrieveAndUpdateAuthor();
 
+void Display()
+{
+    Console.WriteLine("Testing Contributor");
+}
+
 void CoordinateRetrieveAndUpdateAuthor()
 {
     var author = FindThatAutor(18);
